@@ -9,8 +9,8 @@ logoutButton.addEventListener('click', () => {
     logout();
 });
 
+// fetch families from supabase
 function displayFamilies(families) {
-    // fetch families from supabase
     // clear out the familiesEl
     familiesEl.textContent = '';
 
@@ -48,14 +48,16 @@ function displayFamilies(families) {
             bunnyEl.addEventListener('click', async () => {
                 console.log('clicking bunny id:', bunny.id);
                 await deleteBunny(bunny.id);
-
+                await displayFamilies();
             });
         }
+        // append the bunniesEl and nameEl to the familyEl
+        familyEl.append(bunniesEl, nameEl);
+        // append the familyEl to the familiesEl
+        familiesEl.append(familyEl);
+        
     }
 
-    // append the bunniesEl and nameEl to the familyEl
-
-    // append the familyEl to the familiesEl
 }
 
 window.addEventListener('load', async () => {
