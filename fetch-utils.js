@@ -23,15 +23,14 @@ export async function deleteBunny(id) {
 
 export async function createBunny(bunny) {
     // create a bunny using the bunny argument
-
-    return checkError(response);
-}
+    const response = await client
+        .from('fuzzy_bunnies').insert(bunny);
+    return checkError(response);}
 
 // MARTHA STEWART (PRE-MADE) FUNCTIONS
 
 export async function checkAuth() {
     const user = getUser();
-
     if (!user) location.replace('../');
 }
 
@@ -60,5 +59,4 @@ export async function logout() {
 }
 
 function checkError({ data, error }) {
-    return error ? console.error(error) : data;
-}
+    return error ? console.error(error) : data; }
