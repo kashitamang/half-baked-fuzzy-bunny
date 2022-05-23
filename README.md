@@ -44,3 +44,5 @@ Enable row level security and add policies that only allow authenticated users t
 3. Automatically generate the bunny form using a bunny fetched from the database. That way if new properties end up added to the bunny table, the front end dev doesn't need to update the front end later.
 4. Add filter/sort functionality to the families page? Only show bunnies who are larger than 7 lbs, for example? Only show families with more than 2 bunnies?
 5. _Mega ambitious_: I want to able to drag and drop bunnies to different families.
+
+
